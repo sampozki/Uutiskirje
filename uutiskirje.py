@@ -32,106 +32,82 @@ def listaa(lista):
     return new_biglist
 
 
-def sarake(lista, numero, otsikko):
+# Generoi sisällysluettelon
+def luettelo(lista, numero, otsikko, lang):
+    rivi = str(numero) + " " + otsikko + "\n"
+
+    print(rivi, end="")
+    kirjoita(rivi, lang)
+
     num = 1
+    for i in lista:
+        rivi = "    " + str(numero) + "." + str(num) + " " + i + "\n"
+        print(rivi, end="")
+        kirjoita(rivi, lang)
+        num += 1
+
+    print()
+    kirjoita("\n", lang)
+
+
+# Generoi lopun rakenteen
+def sarake(lista, numero, otsikko, lang):
     otsikkoreuna = "o-----------------------------------------------------------------------o"
     otsikkoreunapieni = "o--------------------------o"
-
     rivi = otsikkoreunapieni + "\n" + str(numero) + " " + otsikko + "\n" + otsikkoreunapieni + "\n\n"
-    print(rivi)
-    kirjoita(rivi)
 
+    print(rivi, end="")
+    kirjoita(rivi, lang)
+
+    num = 1
     for i in lista:
         rivi = otsikkoreuna + "\n" + str(numero) + "." + str(num) + " " + i + "\n" + otsikkoreuna + "\n\n\n\n"
-        print(rivi)
-        kirjoita(rivi)
+        print(rivi, end="")
+        kirjoita(rivi, lang)
         num += 1
-    kirjoita("\n")
 
-
-def sarakeen(lista, numero, otsikko):
-    num = 1
-    otsikkoreuna = "o-----------------------------------------------------------------------o"
-    otsikkoreunapieni = "o--------------------------o"
-
-    print(otsikkoreunapieni + "\n" + str(numero) + " " + otsikko + "\n" + otsikkoreunapieni + "\n")
-    kirjoitaen(otsikkoreunapieni + "\n" + str(numero) + " " + otsikko + "\n" + otsikkoreunapieni + "\n\n")
-
-    for i in lista:
-        print(otsikkoreuna + "\n" + str(numero) + "." + str(num) + " " + i + "\n" + otsikkoreuna + "\n\n\n")
-        kirjoitaen(otsikkoreuna + "\n" + str(numero) + "." + str(num) + " " + i + "\n" + otsikkoreuna + "\n\n\n\n")
-        num += 1
-    kirjoitaen("\n")
-
-
-def luettelo(lista, numero, otsikko):
-    num = 1
-    print(str(numero) + " " + otsikko)
-    kirjoita(str(numero) + " " + otsikko + "\n")
-
-    for i in lista:
-        print("    " + str(numero) + "." + str(num) + " " + i)
-        kirjoita("    " + str(numero) + "." + str(num) + " " + i + "\n")
-        num += 1
-    print()
-    kirjoita("\n")
-
-
-def luetteloen(lista, numero, otsikko):
-    num = 1
-    print(str(numero) + " " + otsikko)
-    kirjoitaen(str(numero) + " " + otsikko + "\n")
-
-    for i in lista:
-        print("    " + str(numero) + "." + str(num) + " " + i)
-        kirjoitaen("    " + str(numero) + "." + str(num) + " " + i + "\n")
-        num += 1
-    print()
-    kirjoitaen("\n")
+    kirjoita("\n", lang)
 
 
 def loppu():
     print("o---------o\nloppu <3\no---------o")
     print("o---------o\nThe End <3\no---------o")
 
-    kirjoita("\n\no---------o\nloppu <3\no---------o\n")
-    kirjoitaen("\n\no---------o\nThe End <3\no---------o\n")
+    kirjoita("\n\no---------o\nloppu <3\no---------o\n", "fi")
+    kirjoita("\n\no---------o\nThe End <3\no---------o\n", "en")
 
 
-def kirjoita(rivi):
-    kirjoitustiedosto.write(str(rivi))
-
-
-def kirjoitaen(rivi):
-    kirjoitustiedostoen.write(str(rivi))
+def kirjoita(rivi, lang):
+    if lang == "fi":
+        kirjoitustiedosto.write(str(rivi))
+    elif lang == "en":
+        kirjoitustiedostoen.write(str(rivi))
 
 
 def main():
 
-    fipohja = open("fi.txt", "r", encoding="UTF-8")
-    enpohja = open("en.txt", "r", encoding="UTF-8")
-
-    rivit = fipohja.readlines()
-    riviten = enpohja.readlines()
+    rivit = open("fi.txt", "r", encoding="UTF-8").readlines()
+    riviten = open("en.txt", "r", encoding="UTF-8").readlines()
 
     lista = listaa(rivit)
     listaen = listaa(riviten)
 
-    print(lista)
-    print(listaen)
+    print(lista, listaen)
     print()
 
     for a in range(0, 3):
-        luettelo(lista[a][1:-1], a + 1, lista[a][0])
-        luetteloen(listaen[a][1:-1], a + 1, listaen[a][0])
+        luettelo(lista[a][1:-1], a + 1, lista[a][0], "fi")
+        luettelo(listaen[a][1:-1], a + 1, listaen[a][0], "en")
 
     for a in range(0, 3):
-        sarake(lista[a][1:-1], a + 1, lista[a][0])
-        sarakeen(listaen[a][1:-1], a + 1, listaen[a][0])
+        sarake(lista[a][1:-1], a + 1, lista[a][0], "fi")
+        sarake(listaen[a][1:-1], a + 1, listaen[a][0], "en")
 
     loppu()
 
 
 kirjoitustiedosto = open("valmisfi.txt", "w", encoding="UTF-8")
 kirjoitustiedostoen = open("valmisen.txt", "w", encoding="UTF-8")
-main()
+
+if __name__ == "__main__":
+    main()

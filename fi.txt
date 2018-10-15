@@ -1,0 +1,7 @@
+﻿Tapahtumat
+--TAPAHTUMAT TÄHÄN RIVINVAIHTO EROTTAA TAPAHTUMAT TOISISTAAN--
+*Uutisia kampukselta
+--UUTISET TÄHÄN--
+*Uutisia maailmalta
+--UUTISET ULKOMAILTA TÄHÄN--
+*

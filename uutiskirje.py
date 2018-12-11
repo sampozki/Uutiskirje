@@ -7,7 +7,7 @@
   \____/ \__,_|\__|_|___/_|\_\_|_|  | |\___|\_____|\___|_| |_|\___|_|  \__,_|\__,_|\__|\__\___/|_|  |_|
                                    _/ |
                                   |__/
-Copyright: sampozki 2018
+Copyright: Sampo 'sampozki' Pelto 2018
 Tekee uutiskirjeen tiedostosta rungoksi
 """
 
@@ -40,10 +40,17 @@ def luettelo(lista, numero, otsikko, lang):
 
     # Generoi alaotsikot muotoon 1.3 nönnönnöö
     num = 1
-    for i in lista:
-        rivi = "    " + str(numero) + "." + str(num) + " " + i + "\n"
-        kirjoita(rivi, lang)
-        num += 1
+    if lista[0] == '':
+        if lang == 'fi':
+            kirjoita("    /* Ei tiedotettavaa */ \n", lang)
+        else:
+            kirjoita("    /* Nothing to inform */ \n", lang)
+    else:
+        for i in lista:
+            if i != '':
+                rivi = "    " + str(numero) + "." + str(num) + " " + i + "\n"
+                kirjoita(rivi, lang)
+                num += 1
 
     # Kirjoittaa valmiiseen tiedostoon
     kirjoita("\n", lang)
@@ -60,9 +67,10 @@ def uutine(lista, numero, otsikko, lang):
     # Tekee alaotsikon oikean otsikon alle
     num = 1
     for i in lista:
-        rivi = otsikkoreuna + "\n" + str(numero) + "." + str(num) + " " + i + "\n" + otsikkoreuna + "\n\n\n\n"
-        kirjoita(rivi, lang)
-        num += 1
+        if i != '':
+            rivi = otsikkoreuna + "\n" + str(numero) + "." + str(num) + " " + i + "\n" + otsikkoreuna + "\n\n\n\n"
+            kirjoita(rivi, lang)
+            num += 1
 
     # Kirjoittaa valmiiseen tiedostoon
     kirjoita("\n", lang)
@@ -99,8 +107,10 @@ def main():
 
     # Käy läpi kaikki uutiset
     for a in range(0, 3):
-        uutine(lista[0][a][1:-1], a + 1, lista[0][a][0], "fi")
-        uutine(lista[1][a][1:-1], a + 1, lista[1][a][0], "en")
+        if len(lista[0][a][1:-1]) > 2:
+            uutine(lista[0][a][1:-1], a + 1, lista[0][a][0], "fi")
+        if len(lista[1][a][1:-1]) > 2:
+            uutine(lista[1][a][1:-1], a + 1, lista[1][a][0], "en")
 
     loppu()
 

@@ -8,7 +8,7 @@
                                    _/ |
                                   |__/
 Copyright: Sampo 'sampozki' Pelto 2018
-Tekee uutiskirjeen tiedostosta rungoksi
+Tekee uutiskirjeen tiedostosta rungoksi (vihdoin)
 """
 
 

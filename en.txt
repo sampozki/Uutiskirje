@@ -1,7 +1,10 @@
 ﻿Events
---EVENTS HERE IN ENGLISH--
+Put events here
+Split them into lines
 *News from campus
---NEWS HERE IN ENGLISH--
+Put news here :D
+If there isn't any news E.g. from the world just leave it empty
+Empty rows SHOULDN'T have effect on generation of the file
 *News from the World
---NEWS FROM WORLD HERE IN ENGLISH--
+
 *

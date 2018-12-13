@@ -1,43 +1,34 @@
-1 ﻿Events
-    1.1 --EVENTS HERE IN ENGLISH--
+1) ﻿Events
+    1.1 Put events here
+    1.2 Split them into lines
 
-2 News from campus
-    2.1 --NEWS HERE IN ENGLISH--
+2) News from campus
+    2.1 Put news here :D
+    2.2 If there isn't any news E.g. from the world just leave it empty
+    2.3 Empty rows SHOULDN'T have effect on generation of the file
 
-3 News from the World
-    3.1 --NEWS FROM WORLD HERE IN ENGLISH--
-
-o--------------------------o
-1 ﻿Events
-o--------------------------o
-
-o-----------------------------------------------------------------------o
-1.1 --EVENTS HERE IN ENGLISH--
-o-----------------------------------------------------------------------o
-
-
-
+3) News from the World
+    /* Nothing to inform */ 
 
 o--------------------------o
 2 News from campus
 o--------------------------o
 
 o-----------------------------------------------------------------------o
-2.1 --NEWS HERE IN ENGLISH--
+2.1 Put news here :D
 o-----------------------------------------------------------------------o
 
 
 
-
-o--------------------------o
-3 News from the World
-o--------------------------o
-
 o-----------------------------------------------------------------------o
-3.1 --NEWS FROM WORLD HERE IN ENGLISH--
+2.2 If there isn't any news E.g. from the world just leave it empty
 o-----------------------------------------------------------------------o
 
 
+
+o-----------------------------------------------------------------------o
+2.3 Empty rows SHOULDN'T have effect on generation of the file
+o-----------------------------------------------------------------------o
 
 
 

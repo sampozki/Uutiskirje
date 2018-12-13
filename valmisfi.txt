@@ -1,43 +1,34 @@
-1 ﻿Tapahtumat
-    1.1 --TAPAHTUMAT TÄHÄN RIVINVAIHTO EROTTAA TAPAHTUMAT TOISISTAAN--
+1) ﻿Tapahtumat
+    1.1 Tapahtuma tähän väliin
+    1.2 Erota alaotsikot rivinvaihdolla
 
-2 Uutisia kampukselta
-    2.1 --UUTISET TÄHÄN--
+2) Uutisia kampukselta
+    2.1 Tähän väliin tulee uutiset kampukselta :D
+    2.2 Jos johonkin otsikon alle ei tule mitään niin jätä se vain tyhjäksi
+    2.3 Tyhjien rivien ei PITÄISI vaikuttaa generointiin
 
-3 Uutisia maailmalta
-    3.1 --UUTISET ULKOMAILTA TÄHÄN--
-
-o--------------------------o
-1 ﻿Tapahtumat
-o--------------------------o
-
-o-----------------------------------------------------------------------o
-1.1 --TAPAHTUMAT TÄHÄN RIVINVAIHTO EROTTAA TAPAHTUMAT TOISISTAAN--
-o-----------------------------------------------------------------------o
-
-
-
+3) Uutisia maailmalta
+    /* Ei tiedotettavaa */ 
 
 o--------------------------o
 2 Uutisia kampukselta
 o--------------------------o
 
 o-----------------------------------------------------------------------o
-2.1 --UUTISET TÄHÄN--
+2.1 Tähän väliin tulee uutiset kampukselta :D
 o-----------------------------------------------------------------------o
 
 
 
-
-o--------------------------o
-3 Uutisia maailmalta
-o--------------------------o
-
 o-----------------------------------------------------------------------o
-3.1 --UUTISET ULKOMAILTA TÄHÄN--
+2.2 Jos johonkin otsikon alle ei tule mitään niin jätä se vain tyhjäksi
 o-----------------------------------------------------------------------o
 
 
+
+o-----------------------------------------------------------------------o
+2.3 Tyhjien rivien ei PITÄISI vaikuttaa generointiin
+o-----------------------------------------------------------------------o
 
 
 

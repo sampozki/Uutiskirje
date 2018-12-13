@@ -106,9 +106,9 @@ def main():
 
     # Käy läpi kaikki uutiset
     for a in range(0, 3):
-        if len(lista[0][a][1:-1]) > 2:
+        if lista[0][a][1:-1][0] != '':
             uutine(lista[0][a][1:-1], a + 1, lista[0][a][0], "fi")
-        if len(lista[1][a][1:-1]) > 2:
+        if lista[1][a][1:-1][0] != '':
             uutine(lista[1][a][1:-1], a + 1, lista[1][a][0], "en")
 
     loppu()

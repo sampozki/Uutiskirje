@@ -8,7 +8,7 @@
                                    _/ |
                                   |__/
 Copyright: Sampo 'sampozki' Pelto 2018
-Tekee uutiskirjeen tiedostosta rungoksi (vihdoin)
+Tekee uutiskirjeen tiedostosta rungoksi (
 """
 
 
@@ -52,11 +52,11 @@ def luettelo(lista, numero, otsikko, lang):
                 kirjoita(rivi, lang)
                 num += 1
 
-    # Kirjoittaa valmiiseen tiedostoon
+    # Kirjoittaa valmiiseen tiedostoon lang-parametrin mukaan
     kirjoita("\n", lang)
 
 
-# Generoi lopun rakenteen
+# Generoi itse uutiskirjeen
 def uutine(lista, numero, otsikko, lang):
     otsikkoreuna = "o-----------------------------------------------------------------------o"
     otsikkoreunapieni = "o--------------------------o"
@@ -72,14 +72,11 @@ def uutine(lista, numero, otsikko, lang):
             kirjoita(rivi, lang)
             num += 1
 
-    # Kirjoittaa valmiiseen tiedostoon
-    kirjoita("\n", lang)
-
 
 # Generoi uutiskirjeen loppuun tulevan laatikon
 def loppu():
-    kirjoita("\n\no---------o\nloppu <3\no---------o\n", "fi")
-    kirjoita("\n\no---------o\nThe End <3\no---------o\n", "en")
+    kirjoita("\no---------o\nloppu <3\no---------o\n", "fi")
+    kirjoita("\no---------o\nThe End <3\no---------o\n", "en")
 
 
 def kirjoita(rivi, lang):
@@ -92,6 +89,8 @@ def kirjoita(rivi, lang):
         kirjoitustiedostoen.write(str(rivi))
 
 
+# lista-listan tietorakenne on kasa listoja ":D"
+# lista[kieli][tapahtuma,uutinen jne][uutisen indeksi] <- ensimmäinen alkio sisältää otsikon
 def main():
     rivit = open("fi.txt", "r", encoding="UTF-8").readlines()
     riviten = open("en.txt", "r", encoding="UTF-8").readlines()

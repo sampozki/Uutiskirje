@@ -73,16 +73,8 @@ def uutine(lista, numero, otsikko, lang):
             num += 1
 
 
-# Generoi uutiskirjeen loppuun tulevan laatikon
-def loppu():
-    kirjoita("\no---------o\nloppu <3\no---------o\n", "fi")
-    kirjoita("\no---------o\nThe End <3\no---------o\n", "en")
-
-
+# Kirjottaa oikeaan tiedostoon kielestä riippuen
 def kirjoita(rivi, lang):
-    print(rivi)
-
-    # Kirjottaa oikeaan tiedostoon kielestä riippuen
     if lang == "fi":
         kirjoitustiedosto.write(str(rivi))
     elif lang == "en":
@@ -111,7 +103,9 @@ def main():
         if lista[1][a][1:-1][0] != '':
             uutine(lista[1][a][1:-1], a + 1, lista[1][a][0], "en")
 
-    loppu()
+    kirjoita("\no---------o\nloppu <3\no---------o\n", "fi")
+    kirjoita("\no---------o\nThe End <3\no---------o\n", "en")
+    print("Generointi valmis!")
 
 
 kirjoitustiedosto = open("valmisfi.txt", "w", encoding="UTF-8")
